@@ -31,20 +31,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // Future<String> loadAsset() async {
-  //   return await rootBundle.loadString('assets/day1/1.txt');
-  // }
-
   @override
   Widget build(BuildContext context) {
-    // loadAsset().then((res) {
-    //   List<String> x = res.split("\n");
-    //   num counter = 0;
-    //   for(var i = 0; i < x.length; i++){
-
-    //   }
-    //   print(counter);
-    // });
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
