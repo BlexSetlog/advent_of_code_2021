@@ -1,10 +1,14 @@
 import 'dart:math';
 
+import 'package:advent_of_code_2021/shared/day.dart';
+import 'package:advent_of_code_2021/shared/day_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'days_list.dart';
+
 class DaysOverview extends StatelessWidget {
-  final List<int> days = Iterable<int>.generate(24).toList();
+  final DaysList daysList = DaysList();
 
   DaysOverview({Key? key}) : super(key: key);
 
@@ -16,16 +20,9 @@ class DaysOverview extends StatelessWidget {
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
       crossAxisCount: 2,
-      children: days
+      children: daysList.days
           .map(
-            (e) => Container(
-                child: Center(
-                  child: Text(
-                    "Day ${e + 1}",
-                  ),
-                ),
-                color: Colors
-                    .primaries[Random().nextInt(Colors.primaries.length)]),
+            (day) => DayTile(day: day),
           )
           .toList(),
     );
